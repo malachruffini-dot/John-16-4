@@ -1,394 +1,554 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>John 14:6</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',sans-serif;background:#0a0a0f;color:#ddd;line-height:1.7}
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:2rem;background:#0f0f15}
-.ref{font-family:'Cormorant Garamond',serif;font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:#c9a96e;margin-bottom:1rem}
-.verse{font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,4vw,2.2rem);font-style:italic;color:#f0ece6;margin-bottom:1.5rem}
-.sub{color:#888;font-size:.9rem}
-.nav{position:sticky;top:0;background:rgba(10,10,15,.95);border-bottom:1px solid #222;padding:.7rem;display:flex;justify-content:center;gap:.3rem;flex-wrap:wrap;z-index:100}
-.nav button{background:transparent;border:1px solid #333;color:#888;padding:.35rem .8rem;border-radius:20px;cursor:pointer;font-size:.75rem;transition:.3s}
-.nav button:hover,.nav button.on{border-color:#c9a96e;color:#c9a96e}
-.content{max-width:680px;margin:0 auto;padding:3rem 1.2rem}
-.sec{display:none;animation:fade .5s}
-.sec.on{display:block}
-@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-.sec h2{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:#c9a96e;text-align:center;margin-bottom:1.5rem}
-.sec p{margin-bottom:1rem;font-size:1rem}
-.hl{color:#c9a96e;font-weight:600}
-.box{text-align:center;margin-top:2rem;padding:1.5rem;background:#14141a;border-radius:10px;border:1px solid #222}
-.box p{margin-bottom:1rem;color:#888;font-size:.9rem}
-.btn{display:inline-block;padding:.9rem 2.2rem;background:#c9a96e;color:#0a0a0f;text-decoration:none;border-radius:50px;font-weight:600;transition:.3s}
-.btn:hover{background:#e0b97a;transform:translateY(-2px)}
-.foot{text-align:center;padding:2rem;color:#666;font-size:.85rem;border-top:1px solid #222}
-.foot span{color:#888}
-.music{position:fixed;bottom:1rem;right:1rem;width:44px;height:44px;border-radius:50%;background:#14141a;border:1px solid #333;color:#c9a96e;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:200;font-size:1.1rem;transition:.3s}
-.music:hover{background:#c9a96e;color:#0a0a0f}
-.music.play{animation:pulse 2s infinite}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(201,169,110,.4)}70%{box-shadow:0 0 0 8px rgba(201,169,110,0)}}
-.rtl{direction:rtl;text-align:right}
-.rtl h2,.rtl .box{text-align:center}
-@media(max-width:600px){.verse{font-size:1.2rem}.content{padding:2rem 1rem}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giovanni 14:6</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            background: #0d0d0d;
+            color: #e8e8e8;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 16px 60px;
+            line-height: 1.65;
+        }
+        .container {
+            max-width: 620px;
+            width: 100%;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2rem;
+            letter-spacing: 3px;
+            margin-bottom: 24px;
+            color: #c9a96e;
+            font-weight: 400;
+        }
+        .lang-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px;
+            margin-bottom: 32px;
+        }
+        .lang-btn {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid #333;
+            color: #888;
+            padding: 6px 12px;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            font-family: inherit;
+        }
+        .lang-btn:hover {
+            border-color: #c9a96e;
+            color: #c9a96e;
+        }
+        .lang-btn.active {
+            background: #c9a96e;
+            border-color: #c9a96e;
+            color: #0d0d0d;
+        }
+        .verse {
+            font-size: 1.15rem;
+            font-style: italic;
+            margin-bottom: 36px;
+            padding: 0 8px;
+            color: #d4d4d4;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .divider {
+            width: 50px;
+            height: 1px;
+            background: #c9a96e;
+            margin: 0 auto 32px;
+            opacity: 0.5;
+        }
+        .message {
+            font-size: 0.98rem;
+            margin-bottom: 14px;
+            color: #b8b8b8;
+        }
+        .message strong {
+            color: #e0e0e0;
+            font-weight: 400;
+        }
+        .highlight {
+            color: #c9a96e;
+            font-size: 1.05rem;
+            margin: 28px 0;
+            font-style: italic;
+        }
+        .contact-section { margin: 36px 0 24px; }
+        .contact-btn {
+            display: inline-block;
+            padding: 12px 32px;
+            background: transparent;
+            border: 1px solid #c9a96e;
+            color: #c9a96e;
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+        .contact-btn:hover {
+            background: #c9a96e;
+            color: #0d0d0d;
+        }
+        .footer-text {
+            font-size: 0.85rem;
+            color: #777;
+            margin-top: 36px;
+            line-height: 1.9;
+        }
+        .footer-text strong { color: #999; font-weight: 400; }
+        .counter {
+            margin-top: 32px;
+            font-size: 0.75rem;
+            color: #555;
+            letter-spacing: 2px;
+        }
+        .counter-number { color: #c9a96e; font-size: 1.1rem; }
+        .music-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(20,20,20,0.92);
+            border: 1px solid #333;
+            padding: 10px 14px;
+            cursor: pointer;
+            color: #c9a96e;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            z-index: 100;
+            transition: border-color 0.3s;
+            font-family: inherit;
+        }
+        .music-control:hover { border-color: #c9a96e; }
+        @media (max-width: 480px) {
+            h1 { font-size: 1.6rem; letter-spacing: 2px; }
+            .verse { font-size: 1rem; min-height: 70px; }
+            .message { font-size: 0.92rem; }
+            .lang-btn { padding: 5px 9px; font-size: 0.7rem; }
+            .highlight { font-size: 0.98rem; }
+        }
+    </style>
 <base target="_blank">
 </head>
 <body>
+    <div class="container">
+        <h1 id="page-title">GIOVANNI 14:6</h1>
 
-<div class="hero" id="hero">
-<div class="ref" id="h-ref">Giovanni 14:6</div>
-<div class="verse" id="h-verse">"Io sono la via, la verita e la vita.<br>Nessuno viene al Padre se non per mezzo di me."</div>
-<div class="sub" id="h-sub">Se stai leggendo, non e per caso.<br>Le coincidenze non esistono.</div>
-</div>
+        <div class="lang-bar" id="lang-bar"></div>
 
-<div class="nav">
-<button class="on" onclick="go('it')">IT</button>
-<button onclick="go('en')">EN</button>
-<button onclick="go('es')">ES</button>
-<button onclick="go('fr')">FR</button>
-<button onclick="go('de')">DE</button>
-<button onclick="go('nl')">NL</button>
-<button onclick="go('pt')">PT</button>
-<button onclick="go('ro')">RO</button>
-<button onclick="go('el')">EL</button>
-<button onclick="go('pl')">PL</button>
-<button onclick="go('ru')">RU</button>
-<button onclick="go('he')">HE</button>
-<button onclick="go('ar')">AR</button>
-<button onclick="go('zh')">中文</button>
-</div>
+        <p class="verse" id="verse">Gesù disse: "Io sono la via, la verità e la vita. Nessuno viene al Padre se non per mezzo di me."</p>
 
-<div class="content">
+        <div class="divider"></div>
 
-<div class="sec on" id="it">
-<h2>Chi e questa persona?</h2>
-<p>Questo e <span class="hl">Gesu</span>. Non una religione, non un'istituzione, non una regola. Una persona.</p>
-<p>Ha camminato sulla terra, ha guarito i malati, ha perdonato i peccatori, e morto sulla croce ed e risorto. E venuto per cercare e salvare cio che era perduto.</p>
-<p class="hl" style="text-align:center;margin:1.5rem 0">"Se vuoi conoscere questa persona, chiama il Suo nome. Ti ascolta."</p>
-<p>Domande? Anche io sono un disastro.</p>
-<div class="box">
-<p>Sotto c'e il bottone per contattarmi.</p>
-<a href="mailto:malachruffini@gmail.com" class="btn">Contattami</a>
-</div>
-<p style="text-align:center;font-style:italic;color:#777;margin-top:2rem">
-Questa pagina e stata creata da qualcuno che e morto in terapia intensiva ed e tornato arrabbiato.<br>
-Il segno sull'auto e reale. La persona e reale. Tu sei reale.<br>
-<span style="color:#c9a96e">Parliamone.</span>
-</p>
-</div>
+        <p class="message" id="msg-1">Se stai leggendo, non è per caso, le coincidenze non esistono.</p>
+        <p class="message"><strong id="msg-2">Chi è questa persona?</strong></p>
+        <p class="message" id="msg-3">Questo è Gesù. Non una religione, non un'istituzione, non una regola. Una persona. Ha camminato sulla terra, ha guarito i malati, ha perdonato i peccatori, è morto sulla croce ed è risorto. È venuto per cercare e salvare ciò che era perduto.</p>
+        <p class="message"><strong id="msg-4">Stai cercando?</strong></p>
 
-<div class="sec" id="en">
-<h2>Who is this person?</h2>
-<p>This is <span class="hl">Jesus</span>. Not a religion, not an institution, not a rule. A person.</p>
-<p>He walked on earth, healed the sick, forgave sinners, died on the cross and rose again. He came to seek and to save that which was lost.</p>
-<p class="hl" style="text-align:center;margin:1.5rem 0">"If you want to know this person, call His name. He listens."</p>
-<p>Questions? I am a mess too.</p>
-<div class="box">
-<p>There is a button below to contact me.</p>
-<a href="mailto:malachruffini@gmail.com" class="btn">Contact Me</a>
-</div>
-<p style="text-align:center;font-style:italic;color:#777;margin-top:2rem">
-This page was created by someone who died in intensive care and came back angry.<br>
-The sign on the car is real. The person is real. You are real.<br>
-<span style="color:#c9a96e">Let's talk.</span>
-</p>
-</div>
+        <p class="highlight" id="msg-5">"Se vuoi conoscere questa persona, chiama il Suo nome. Ti ascolta."</p>
 
-<div class="sec" id="es">
-<h2>Quien es esta persona?</h2>
-<p>Este es <span class="hl">Jesus</span>. No una religion, no una institucion, no una regla. Una persona.</p>
-<p>Caminio sobre la tierra, sano a los enfermos, perdono a los pecadores, murio en la cruz y resucito. Vino a buscar y a salvar lo que se habia perdido.</p>
-<p class="hl" style="text-align:center;margin:1.5rem 0">"Si quieres conocer a esta persona, llama Su nombre. Te escucha."</p>
-<p>Preguntas? Yo tambien soy un desastre.</p>
-<div class="box">
-<p>Abajo hay un boton para contactarme.</p>
-<a href="mailto:malachruffini@gmail.com" class="btn">Contactame</a>
-</div>
-<p style="text-align:center;font-style:italic;color:#777;margin-top:2rem">
-Esta pagina fue creada por alguien que murio en cuidados intensivos y volvio enfadado.<br>
-La senial en el coche es real. La persona es real. Tu eres real.<br>
-<span style="color:#c9a96e">Hablemos.</span>
-</p>
-</div>
+        <p class="message" id="msg-6">Domande? Anche io sono un disastro.</p>
+        <p class="message" id="msg-7">Sotto c'è il bottone per contattarmi.</p>
 
-<div class="sec" id="fr">
-<h2>Qui est cette personne?</h2>
-<p>C'est <span class="hl">Jesus</span>. Pas une religion, pas une institution, pas une regle. Une personne.</p>
-<p>Il a marche sur la terre, gueri les malades, pardonne les pecheurs, est mort sur la croix et est ressuscite. Il est venu chercher et sauver ce qui etait perdu.</p>
-<p class="hl" style="text-align:center;margin:1.5rem 0">"Si tu veux connaitre cette personne, appelle Son nom. Il t'ecoute."</p>
-<p>Des questions? Je suis aussi un desastre.</p>
-<div class="box">
-<p>Il y a un bouton ci-dessous pour me contacter.</p>
-<a href="mailto:malachruffini@gmail.com" class="btn">Me Contacter</a>
-</div>
-<p style="text-align:center;font-style:italic;color:#777;margin-top:2rem">
-Cette page a ete creee par quelqu'un qui est mort en soins intensifs et qui est revenu en colere.<br>
-Le signe sur la voiture est reel. La personne est reelle. Tu es reel.<br>
-<span style="color:#c9a96e">Parlons-en.</span>
-</p>
-</div>
+        <div class="contact-section">
+            <a href="mailto:malachruffini@gmail.com" class="contact-btn" id="contact-btn">Contattami</a>
+        </div>
 
-<div class="sec" id="de">
-<h2>Wer ist diese Person?</h2>
-<p>Das ist <span class="hl">Jesus</span>. Nicht eine Religion, nicht eine Institution, nicht eine Regel. Eine Person.</p>
-<p>Er ist auf der Erde gegangen, hat die Kranken geheilt, den Sundern vergeben, ist am Kreuz gestorben und auferstanden. Er kam, um zu suchen und zu retten, was verloren war.</p>
-<p class="hl" style="text-align:center;margin:1.5rem 0">"Wenn du diese Person kennenlernen willst, rufe Seinen Namen. Er hort dich."</p>
-<p>Fragen? Ich bin auch ein Desaster.</p>
-<div class="box">
-<p>Unten ist ein Button, um mich zu kontaktieren.</p>
-<a href="mailto:malachruffini@gmail.com" class="btn">Kontakt</a>
-</div>
-<p style="text-align:center;font-style:italic;color:#777;margin-top:2rem">
-Diese Seite wurde von jemandem erstellt, der auf der Intensivstation gestorben ist und wutend zuruckgekehrt ist.<br>
-Das Zeichen auf dem Auto ist real. Die Person ist real. Du bist real.<br>
-<span style="color:#c9a96e">Lass uns reden.</span>
-</p>
-</div>
+        <div class="footer-text">
+            <strong id="footer-1">Questa pagina è stata creata da qualcuno che è morto in terapia intensiva ed è tornato arrabbiato.</strong><br>
+            <span id="footer-2">Il segno sull'auto è reale.</span><br>
+            <span id="footer-3">La persona è reale.</span><br>
+            <span id="footer-4">Tu sei reale.</span><br>
+            <span id="footer-5">Parliamone.</span>
+        </div>
 
-<div class="sec" id="nl">
-<h2>Wie is deze persoon?</h2>
-<p>Dit is <span class="hl">Jezus</span>. Geen religie, geen instituut, geen regel. Een persoon.</p>
-<p>Hij liep op aarde, genas de zieken, vergaf de zondaars, stierf aan het kruis en stond op uit de dood. Hij kwam om te zoeken en te redden wat verloren was.</p>
-<p class="hl" style="text-align:center;margin:1.5rem 0">"Als je deze persoon wilt leren kennen, roep Zijn naam. Hij luistert."</p>
-<p>Vragen? Ik ben ook een ramp.</p>
-<div class="box">
-<p>Er is hieronder een knop om contact met mij op te nemen.</p>
-<a href="mailto:malachruffini@gmail.com" class="btn">Contact</a>
-</div>
-<p style="text-align:center;font-style:italic;color:#777;margin-top:2rem">
-Deze pagina is gemaakt door iemand die op de intensive care is overleden en boos terugkwam.<br>
-Het teken op de auto is echt. De persoon is echt. Jij bent echt.<br>
-<span style="color:#c9a96e">Laten we praten.</span>
-</p>
-</div>
+        <div class="counter">
+            <span id="counter-label">VISITATORI</span> <span class="counter-number" id="visitor-count">...</span>
+        </div>
+    </div>
 
-<div class="sec" id="pt">
-<h2>Quem e esta pessoa?</h2>
-<p>Este e <span class="hl">Jesus</span>. Nao uma religiao, nao uma instituicao, nao uma regra. Uma pessoa.</p>
-<p>Ele andou na terra, curou os doentes, perdoou os pecadores, morreu na cruz e ressuscitou. Veio buscar e salvar o que estava perdido.</p>
-<p class="hl" style="text-align:center;margin:1.5rem 0">"Se quiseres conhecer esta pessoa, chama o Seu nome. Ele ouve-te."</p>
-<p>Perguntas? Eu tambem sou um desastre.</p>
-<div class="box">
-<p>Abaixo ha um botao para me contactares.</p>
-<a href="mailto:malachruffini@gmail.com" class="btn">Contactar</a>
-</div>
-<p style="text-align:center;font-style:italic;color:#777;margin-top:2rem">
-Esta pagina foi criada por alguem que morreu nos cuidados intensivos e voltou zangado.<br>
-O sinal no carro e real. A pessoa e real. Tu es real.<br>
-<span style="color:#c9a96e">Vamos falar.</span>
-</p>
-</div>
+    <audio id="bg-music" loop>
+        <source src="https://raw.githubusercontent.com/USERNAME/REPO-NAME/music/nickpanekaiassets-gritty-industrial-blues-neo-western-instrumental-323534.mp3" type="audio/mpeg">
+    </audio>
 
-<div class="sec" id="ro">
-<h2>Cine este aceasta persoana?</h2>
-<p>Acesta este <span class="hl">Isus</span>. Nu o religie, nu o institutie, nu o regula. O persoana.</p>
-<p>A umblat pe pamant, a vindecat bolnavii, a iertat pacatosii, a murit pe cruce si a inviat. A venit sa caute si sa mantuiasca ce era pierdut.</p>
-<p class="hl" style="text-align:center;margin:1.5rem 0">"Daca vrei sa cunosti aceasta persoana, cheama Numele Lui. Te asculta."</p>
-<p>Intrebari? Si eu sunt un dezastru.</p>
-<div class="box">
-<p>Mai jos este un buton pentru a ma contacta.</p>
-<a href="mailto:malachruffini@gmail.com" class="btn">Contacteaza-ma</a>
-</div>
-<p style="text-align:center;font-style:italic;color:#777;margin-top:2rem">
-Aceasta pagina a fost creata de cineva care a murit la terapie intensiva si s-a intors furios.<br>
-Semnul de pe masina este real. Persoana este reala. Tu esti real.<br>
-<span style="color:#c9a96e">Sa vorbim.</span>
-</p>
-</div>
+    <button class="music-control" id="music-btn" onclick="toggleMusic()">▶ Musica</button>
 
-<div class="sec" id="el">
-<h2>&#928;&#959;&#953;&#972;&#962; &#949;&#943;&#957;&#945;&#953; &#945;&#965;&#964;&#972; &#964;&#972; &#960;&#961;&#972;&#963;&#969;&#960;&#959;;</h2>
-<p>&#913;&#965;&#964;&#972;&#962; &#949;&#943;&#957;&#945;&#953; &#959; <span class="hl">&#921;&#951;&#963;&#959;&#973;&#962;</span>. &#908;&#967;&#953; &#952;&#961;&#951;&#963;&#954;&#949;&#943;&#945;, &#972;&#967;&#953; &#953;&#948;&#961;&#965;&#956;&#945;, &#972;&#967;&#953; &#954;&#945;&#957;&#972;&#957;&#945;&#962;. &#904;&#957;&#945; &#960;&#961;&#972;&#963;&#969;&#960;&#959;.</p>
-<p>&#928;&#949;&#961;&#960;&#940;&#964;&#951;&#963;&#949; &#963;&#964;&#951; &#947;&#951;, &#952;&#949;&#961;&#940;&#960;&#949;&#965;&#963;&#949; &#964;&#959;&#965;&#962; &#945;&#961;&#961;&#974;&#963;&#964;&#959;&#965;&#962;, &#963;&#965;&#957;&#949;&#967;&#974;&#961;&#951;&#963;&#949; &#964;&#959;&#965;&#962; &#945;&#956;&#945;&#961;&#964;&#969;&#955;&#959;&#973;&#962;, &#960;&#941;&#952;&#945;&#957;&#949; &#963;&#964;&#959;&#957; &#963;&#964;&#945;&#965;&#961;&#972; &#954;&#945;&#953; &#945;&#957;&#945;&#963;&#964;&#942;&#952;&#951;&#954;&#949;. &#919;&#961;&#952;&#949; &#957;&#945; &#950;&#951;&#964;&#942;&#963;&#949;&#953; &#954;&#945;&#953; &#957;&#945; &#963;&#974;&#963;&#949;&#953; &#964;&#972; &#967;&#945;&#956;&#941;&#957;&#959;.</p>
-<p class="hl" style="text-align:center;margin:1.5rem 0">"&#902;&#957; &#952;&#941;&#955;&#949;&#953;&#962; &#957;&#945; &#947;&#957;&#969;&#961;&#943;&#963;&#949;&#953;&#962; &#945;&#965;&#964;&#972; &#964;&#972; &#960;&#961;&#972;&#963;&#969;&#960;&#959;, &#966;&#974;&#957;&#945;&#958;&#949; &#964;&#972; &#972;&#957;&#959;&#956;&#940; &#932;&#959;&#965;. &#931;&#949; &#945;&#954;&#959;&#973;&#949;&#953;."</p>
-<p>&#917;&#961;&#969;&#964;&#942;&#963;&#949;&#953;&#962;; &#922;&#945;&#953; &#949;&#947;&#974; &#949;&#943;&#956;&#945;&#953; &#954;&#945;&#964;&#945;&#963;&#964;&#961;&#959;&#966;&#942;.</p>
-<div class="box">
-<p>&#933;&#960;&#940;&#961;&#967;&#949;&#953; &#954;&#959;&#965;&#956;&#960;&#943; &#960;&#945;&#961;&#945;&#954;&#940;&#964;&#969; &#947;&#953;&#945; &#949;&#960;&#953;&#954;&#959;&#953;&#957;&#969;&#957;&#943;&#945; &#956;&#945;&#950;&#943; &#956;&#959;&#965;.</p>
-<a href="mailto:malachruffini@gmail.com" class="btn">&#917;&#960;&#953;&#954;&#959;&#953;&#957;&#969;&#957;&#943;&#945;</a>
-</div>
-<p style="text-align:center;font-style:italic;color:#777;margin-top:2rem">
-&#913;&#965;&#964;&#942; &#951; &#963;&#949;&#955;&#943;&#948;&#945; &#948;&#951;&#956;&#953;&#959;&#965;&#961;&#947;&#942;&#952;&#951;&#954;&#949; &#945;&#960;&#972; &#954;&#940;&#960;&#959;&#953;&#959;&#957; &#960;&#959;&#965; &#960;&#941;&#952;&#945;&#957;&#949; &#963;&#964;&#951;&#957; &#949;&#957;&#964;&#945;&#964;&#953;&#954;&#942; &#954;&#945;&#953; &#947;&#973;&#961;&#953;&#963;&#949; &#952;&#965;&#956;&#969;&#956;&#941;&#957;&#959;&#962;.<br>
-&#932;&#972; &#963;&#951;&#956;&#940;&#948;&#953; &#963;&#964;&#972; &#945;&#965;&#964;&#959;&#954;&#943;&#957;&#951;&#964;&#959; &#949;&#943;&#957;&#945;&#953; &#945;&#955;&#951;&#952;&#953;&#957;&#972;. &#932;&#972; &#960;&#961;&#972;&#963;&#969;&#960;&#959; &#949;&#943;&#957;&#945;&#953; &#945;&#955;&#951;&#952;&#953;&#957;&#972;. &#904;&#963;&#973; &#949;&#943;&#963;&#945;&#953; &#945;&#955;&#951;&#952;&#953;&#957;&#972;&#962;.<br>
-<span style="color:#c9a96e">&#913;&#962; &#956;&#953;&#955;&#942;&#963;&#959;&#965;&#956;&#949;.</span>
-</p>
-</div>
+    <script>
+        const data = {
+            it: {
+                title: `GIOVANNI 14:6`,
+                verse: `Gesù disse: "Io sono la via, la verità e la vita. Nessuno viene al Padre se non per mezzo di me."`,
+                m1: `Se stai leggendo, non è per caso, le coincidenze non esistono.`,
+                m2: `Chi è questa persona?`,
+                m3: `Questo è Gesù. Non una religione, non un'istituzione, non una regola. Una persona. Ha camminato sulla terra, ha guarito i malati, ha perdonato i peccatori, è morto sulla croce ed è risorto. È venuto per cercare e salvare ciò che era perduto.`,
+                m4: `Stai cercando?`,
+                m5: `"Se vuoi conoscere questa persona, chiama il Suo nome. Ti ascolta."`,
+                m6: `Domande? Anche io sono un disastro.`,
+                m7: `Sotto c'è il bottone per contattarmi.`,
+                contact: `Contattami`,
+                f1: `Questa pagina è stata creata da qualcuno che è morto in terapia intensiva ed è tornato arrabbiato.`,
+                f2: `Il segno sull'auto è reale.`,
+                f3: `La persona è reale.`,
+                f4: `Tu sei reale.`,
+                f5: `Parliamone.`,
+                cl: `VISITATORI`
+            },
+            en: {
+                title: `JOHN 14:6`,
+                verse: `Jesus answered, "I am the way and the truth and the life. No one comes to the Father except through me."`,
+                m1: `If you are reading this, it is not by chance. Coincidences do not exist.`,
+                m2: `Who is this person?`,
+                m3: `This is Jesus. Not a religion, not an institution, not a rule. A person. He walked on earth, healed the sick, forgave sinners, died on the cross and rose again. He came to seek and save what was lost.`,
+                m4: `Are you searching?`,
+                m5: `"If you want to know this person, call His name. He listens to you."`,
+                m6: `Questions? I am a mess too.`,
+                m7: `Below is the button to contact me.`,
+                contact: `Contact Me`,
+                f1: `This page was created by someone who died in intensive care and came back angry.`,
+                f2: `The sign on the car is real.`,
+                f3: `The person is real.`,
+                f4: `You are real.`,
+                f5: `Let's talk.`,
+                cl: `VISITORS`
+            },
+            es: {
+                title: `JUAN 14:6`,
+                verse: `Jesús le dijo: "Yo soy el camino, la verdad y la vida. Nadie viene al Padre sino por mí."`,
+                m1: `Si estás leyendo esto, no es por casualidad. Las coincidencias no existen.`,
+                m2: `¿Quién es esta persona?`,
+                m3: `Este es Jesús. No una religión, no una institución, no una regla. Una persona. Caminó sobre la tierra, sanó a los enfermos, perdonó a los pecadores, murió en la cruz y resucitó. Vino a buscar y salvar lo que estaba perdido.`,
+                m4: `¿Estás buscando?`,
+                m5: `"Si quieres conocer a esta persona, llama Su nombre. Te escucha."`,
+                m6: `¿Preguntas? Yo también soy un desastre.`,
+                m7: `Abajo está el botón para contactarme.`,
+                contact: `Contáctame`,
+                f1: `Esta página fue creada por alguien que murió en cuidados intensivos y regresó enojado.`,
+                f2: `La señal en el auto es real.`,
+                f3: `La persona es real.`,
+                f4: `Tú eres real.`,
+                f5: `Hablemos.`,
+                cl: `VISITANTES`
+            },
+            fr: {
+                title: `JEAN 14:6`,
+                verse: `Jésus lui dit: "Je suis le chemin, la vérité et la vie. Nul ne vient au Père que par moi."`,
+                m1: `Si tu lis ceci, ce n'est pas par hasard. Les coïncidences n'existent pas.`,
+                m2: `Qui est cette personne ?`,
+                m3: `C'est Jésus. Pas une religion, pas une institution, pas une règle. Une personne. Il a marché sur la terre, guéri les malades, pardonné les pécheurs, est mort sur la croix et est ressuscité. Il est venu chercher et sauver ce qui était perdu.`,
+                m4: `Es-tu en quête ?`,
+                m5: `"Si tu veux connaître cette personne, appelle Son nom. Il t'écoute."`,
+                m6: `Des questions ? Moi aussi je suis un désastre.`,
+                m7: `Ci-dessous le bouton pour me contacter.`,
+                contact: `Contactez-moi`,
+                f1: `Cette page a été créée par quelqu'un qui est mort en soins intensifs et est revenu en colère.`,
+                f2: `Le signe sur la voiture est réel.`,
+                f3: `La personne est réelle.`,
+                f4: `Tu es réel.`,
+                f5: `Parlons-en.`,
+                cl: `VISITEURS`
+            },
+            de: {
+                title: `JOHANNES 14:6`,
+                verse: `Jesus spricht zu ihm: "Ich bin der Weg und die Wahrheit und das Leben. Niemand kommt zum Vater denn durch mich."`,
+                m1: `Wenn du das liest, ist es nicht zufällig. Zufälle gibt es nicht.`,
+                m2: `Wer ist diese Person?`,
+                m3: `Das ist Jesus. Nicht eine Religion, nicht eine Institution, nicht eine Regel. Eine Person. Er ging auf der Erde, heilte die Kranken, vergab den Sündern, starb am Kreuz und ist auferstanden. Er kam, um zu suchen und zu retten, was verloren war.`,
+                m4: `Suchst du?`,
+                m5: `"Wenn du diese Person kennenlernen willst, rufe Seinen Namen. Er hört dich."`,
+                m6: `Fragen? Ich bin auch ein Desaster.`,
+                m7: `Unten ist der Button, um mich zu kontaktieren.`,
+                contact: `Kontaktiere mich`,
+                f1: `Diese Seite wurde von jemandem erstellt, der auf der Intensivstation gestorben ist und wütend zurückgekehrt ist.`,
+                f2: `Das Zeichen auf dem Auto ist real.`,
+                f3: `Die Person ist real.`,
+                f4: `Du bist real.`,
+                f5: `Lass uns reden.`,
+                cl: `BESUCHER`
+            },
+            pt: {
+                title: `JOÃO 14:6`,
+                verse: `Disse-lhe Jesus: "Eu sou o caminho, a verdade e a vida. Ninguém vem ao Pai senão por mim."`,
+                m1: `Se você está lendo isso, não é por acaso. Coincidências não existem.`,
+                m2: `Quem é essa pessoa?`,
+                m3: `Este é Jesus. Não uma religião, não uma instituição, não uma regra. Uma pessoa. Ele andou sobre a terra, curou os doentes, perdoou os pecadores, morreu na cruz e ressuscitou. Veio buscar e salvar o que estava perdido.`,
+                m4: `Você está procurando?`,
+                m5: `"Se você quer conhecer essa pessoa, chame o Seu nome. Ele te ouve."`,
+                m6: `Perguntas? Eu também sou um desastre.`,
+                m7: `Abaixo está o botão para me contatar.`,
+                contact: `Contate-me`,
+                f1: `Esta página foi criada por alguém que morreu na UTI e voltou com raiva.`,
+                f2: `O sinal no carro é real.`,
+                f3: `A pessoa é real.`,
+                f4: `Você é real.`,
+                f5: `Vamos conversar.`,
+                cl: `VISITANTES`
+            },
+            ru: {
+                title: `ИОАННА 14:6`,
+                verse: `Иисус сказал ему: "Я есмь путь и истина и жизнь. Никто не приходит к Отцу, как только через Меня."`,
+                m1: `Если ты читаешь это, это не случайно. Совпадений не существует.`,
+                m2: `Кто этот человек?`,
+                m3: `Это Иисус. Не религия, не учреждение, не правило. Человек. Он ходил по земле, исцелял больных, прощал грешников, умер на кресте и воскрес. Он пришел искать и спасать погибшее.`,
+                m4: `Ты ищешь?`,
+                m5: `"Если хочешь познать этого человека, призови Его имя. Он слышит тебя."`,
+                m6: `Вопросы? Я тоже катастрофа.`,
+                m7: `Ниже кнопка, чтобы связаться со мной.`,
+                contact: `Свяжись со мной`,
+                f1: `Эту страницу создал человек, который умер в реанимации и вернулся злым.`,
+                f2: `Знак на машине реален.`,
+                f3: `Человек реален.`,
+                f4: `Ты реален.`,
+                f5: `Давай поговорим.`,
+                cl: `ПОСЕТИТЕЛИ`
+            },
+            zh: {
+                title: `约翰福音 14:6`,
+                verse: `耶稣说："我就是道路、真理、生命。若不藉着我，没有人能到父那里去。"`,
+                m1: `如果你正在读这个，这不是偶然。巧合不存在。`,
+                m2: `这个人是谁？`,
+                m3: `这是耶稣。不是宗教，不是机构，不是规则。一个人。他在地上行走，医治病人，赦免罪人，死在十字架上并复活。他来寻找并拯救失丧的人。`,
+                m4: `你在寻找吗？`,
+                m5: `"如果你想认识这个人，呼求他的名。他听你的。"`,
+                m6: `有问题吗？我也是一团糟。`,
+                m7: `下面是联系我的按钮。`,
+                contact: `联系我`,
+                f1: `这个页面是由一个死在重症监护室并愤怒归来的人创建的。`,
+                f2: `车上的标志是真实的。`,
+                f3: `这个人是真实的。`,
+                f4: `你是真实的。`,
+                f5: `让我们谈谈。`,
+                cl: `访客`
+            },
+            ja: {
+                title: `ヨハネ 14:6`,
+                verse: `イエスは彼に言われた。「わたしは道であり、真理であり、命である。わたしを通らなければ、父のみもとに来る者はない。」`,
+                m1: `これを読んでいるなら、それは偶然ではない。偶然など存在しない。`,
+                m2: `この人は誰？`,
+                m3: `これはイエスである。宗教でも、制度でも、規則でもない。一人の人間。彼は地を歩き、病人を癒し、罪人を赦し、十字架にかかって死に、復活した。失われたものを尋ねて救うために来られた。`,
+                m4: `あなたは探しているか？`,
+                m5: `"この人を知りたいなら、彼の名を呼べ。彼はあなたに耳を傾ける。"`,
+                m6: `質問があるか？私も惨めな人間だ。`,
+                m7: `下に連絡するボタンがある。`,
+                contact: `連絡する`,
+                f1: `このページは、集中治療室で死んで怒って戻ってきた誰かによって作られた。`,
+                f2: `車の標識は本物だ。`,
+                f3: `その人は本物だ。`,
+                f4: `あなたは本物だ。`,
+                f5: `話そう。`,
+                cl: `訪問者`
+            },
+            ko: {
+                title: `요한복음 14:6`,
+                verse: `예수께서 이르시되 "내가 곧 길이요 진리요 생명이니 나로 말미암지 않고는 아버지께로 올 자가 없느니라"`,
+                m1: `이것을 읽고 있다면 우연이 아니다. 우연은 존재하지 않는다.`,
+                m2: `이 사람은 누구인가?`,
+                m3: `이는 예수님이시다. 종교도, 기관도, 규칙도 아닌 한 사람. 그는 땅을 걸으시고, 병자를 고치시고, 죄인을 용서하시고, 십자가에 죽으시고 부활하셨다. 잃어버린 것을 찾아 구원하러 오셨다.`,
+                m4: `당신은 찾고 있는가?`,
+                m5: `"이 사람을 알고 싶다면 그 이름을 부르시오. 그는 당신을 들으신다."`,
+                m6: `질문이 있는가? 나도 엉망이다.`,
+                m7: `아래에 나에게 연락하는 버튼이 있다.`,
+                contact: `연락하기`,
+                f1: `이 페이지는 중환자실에서 죽었다가 화가 나서 돌아온 누군가에 의해 만들어졌다.`,
+                f2: `차의 표시는 진짜이다.`,
+                f3: `그 사람은 진짜이다.`,
+                f4: `당신은 진짜이다.`,
+                f5: `이야기하자.`,
+                cl: `방문자`
+            },
+            ar: {
+                title: `يوحنا 14:6`,
+                verse: `قال له يسوع: "أنا هو الطريق والحق والحياة. ليس أحد يأتي إلى الآب إلا بي."`,
+                m1: `إذا كنت تقرأ هذا، فليس بالصدفة. الصدف غير موجودة.`,
+                m2: `من هو هذا الشخص؟`,
+                m3: `هذا هو يسوع. ليس ديناً، لا مؤسسة، لا قاعدة. إنسان. مشى على الأرض، شفى المرضى، غفر للخطاة، مات على الصليب وقام. جاء ليبحث ويخلص ما ضاع.`,
+                m4: `هل تبحث؟`,
+                m5: `"إذا أردت أن تعرف هذا الشخص، ادعُ اسمه. يسمعك."`,
+                m6: `أسئلة؟ أنا أيضاً كارثة.`,
+                m7: `الزر أدناه للتواصل معي.`,
+                contact: `تواصل معي`,
+                f1: `هذه الصفحة أنشأها شخص مات في العناية المركزة وعاد غاضباً.`,
+                f2: `العلامة على السيارة حقيقية.`,
+                f3: `الشخص حقيقي.`,
+                f4: `أنت حقيقي.`,
+                f5: `لنتحدث.`,
+                cl: `الزوار`
+            },
+            nl: {
+                title: `JOHANNES 14:6`,
+                verse: `Jezus zei tegen hem: "Ik ben de Weg, de Waarheid en het Leven. Niemand komt tot de Vader dan door Mij."`,
+                m1: `Als je dit leest, is het niet toevallig. Toeval bestaat niet.`,
+                m2: `Wie is deze persoon?`,
+                m3: `Dit is Jezus. Geen religie, geen instelling, geen regel. Een persoon. Hij liep over de aarde, genas de zieken, vergaf de zondaars, stierf aan het kruis en stond op. Hij kwam om te zoeken en te redden wat verloren was.`,
+                m4: `Ben je aan het zoeken?`,
+                m5: `"Als je deze persoon wilt kennen, roep Zijn naam. Hij luistert naar je."`,
+                m6: `Vragen? Ik ben ook een puinhoop.`,
+                m7: `Hieronder de knop om contact met mij op te nemen.`,
+                contact: `Contact opnemen`,
+                f1: `Deze pagina is gemaakt door iemand die op de intensive care overleed en boos terugkwam.`,
+                f2: `Het teken op de auto is echt.`,
+                f3: `De persoon is echt.`,
+                f4: `Jij bent echt.`,
+                f5: `Laten we praten.`,
+                cl: `BEZOEKERS`
+            },
+            pl: {
+                title: `JANA 14:6`,
+                verse: `Rzekł do niego Jezus: "Ja jestem drogą i prawdą, i życiem. Nikt nie przychodzi do Ojca, tylko przeze mnie."`,
+                m1: `Jeśli to czytasz, to nie jest przypadek. Zbiegi okoliczności nie istnieją.`,
+                m2: `Kim jest ta osoba?`,
+                m3: `To jest Jezus. Nie religia, nie instytucja, nie zasada. Osoba. Chodził po ziemi, uzdrawiał chorych, przebaczał grzesznikom, umarł na krzyżu i zmartwychwstał. Przyszedł szukać i zbawić to, co zaginęło.`,
+                m4: `Czy szukasz?`,
+                m5: `"Jeśli chcesz poznać tę osobę, wzywaj Jej imienia. Ona cię słyszy."`,
+                m6: `Pytania? Ja też jestem katastrofą.`,
+                m7: `Poniżej przycisk, aby się ze mną skontaktować.`,
+                contact: `Skontaktuj się`,
+                f1: `Tę stronę stworzył ktoś, kto umarł na oddziale intensywnej terapii i wrócił zły.`,
+                f2: `Znak na samochodzie jest prawdziwy.`,
+                f3: `Osoba jest prawdziwa.`,
+                f4: `Ty jesteś prawdziwy.`,
+                f5: `Porozmawiajmy.`,
+                cl: `ODWIEDZAJĄCY`
+            },
+            tr: {
+                title: `YUHANNA 14:6`,
+                verse: `İsa ona, "Ben yol, gerçek ve yaşamım. Baba'ya benden başka kimse gelmez" dedi.`,
+                m1: `Bunu okuyorsan, tesadüf değil. Tesadüfler diye bir şey yok.`,
+                m2: `Bu kişi kim?`,
+                m3: `Bu İsa. Bir din değil, bir kurum değil, bir kural değil. Bir insan. Yeryüzünde yürüdü, hastaları iyileştirdi, günahkarları affetti, haçta öldü ve dirildi. Kaybolanı aramak ve kurtarmak için geldi.`,
+                m4: `Arıyor musun?`,
+                m5: `"Bu kişiyi tanımak istiyorsan, adını çağır. Seni dinler."`,
+                m6: `Soruların mı var? Ben de bir felaketim.`,
+                m7: `Aşağıda benimle iletişime geçme butonu var.`,
+                contact: `Bana Ulaş`,
+                f1: `Bu sayfa, yoğun bakımda ölen ve öfkeli bir şekilde dönen biri tarafından oluşturuldu.`,
+                f2: `Arabadaki işaret gerçek.`,
+                f3: `Kişi gerçek.`,
+                f4: `Sen gerçeksın.`,
+                f5: `Konuşalım.`,
+                cl: `ZİYARETÇİLER`
+            },
+            el: {
+                title: `ΙΩΑΝΝΗΣ 14:6`,
+                verse: `Λέγει αὐτῷ ὁ Ἰησοῦς· Ἐγώ εἰμι ἡ ὁδὸς καὶ ἡ ἀλήθεια καὶ ἡ ζωή· οὐδεὶς ἔρχεται πρὸς τὸν πατέρα εἰ μὴ δι' ἐμοῦ.`,
+                m1: `Αν διαβάζεις αυτό, δεν είναι τυχαίο. Οι συμπτώσεις δεν υπάρχουν.`,
+                m2: `Ποιος είναι αυτό το πρόσωπο;`,
+                m3: `Αυτός είναι ο Ιησούς. Όχι μια θρησκεία, όχι ένα ίδρυμα, όχι ένας κανόνας. Ένα πρόσωπο. Περπάτησε στη γη, θεράπευσε τους αρρώστους, συγχώρεσε τους αμαρτωλούς, πέθανε στον σταυρό και αναστήθηκε. Ήρθε να αναζητήσει και να σώσει το χαμένο.`,
+                m4: `Αναζητάς;`,
+                m5: `"Αν θέλεις να γνωρίσεις αυτό το πρόσωπο, κάλεσε το όνομά Του. Σε ακούει."`,
+                m6: `Ερωτήσεις; Κι εγώ είμαι μια καταστροφή.`,
+                m7: `Παρακάτω είναι το κουμπί για να επικοινωνήσεις μαζί μου.`,
+                contact: `Επικοινώνησε`,
+                f1: `Αυτή η σελίδα δημιουργήθηκε από κάποιον που πέθανε σε μονάδα εντατικής θεραπείας και γύρισε θυμωμένος.`,
+                f2: `Το σημάδι στο αυτοκίνητο είναι πραγματικό.`,
+                f3: `Το πρόσωπο είναι πραγματικό.`,
+                f4: `Εσύ είσαι πραγματικός.`,
+                f5: `Ας μιλήσουμε.`,
+                cl: `ΕΠΙΣΚΕΠΤΕΣ`
+            }
+        };
 
-<div class="sec" id="pl">
-<h2>Kim jest ta osoba?</h2>
-<p>To jest <span class="hl">Jezus</span>. Nie religia, nie instytucja, nie zasada. Osoba.</p>
-<p>Chodzil po ziemi, uzdrawial chorych, przebaczal grzesznikom, umarl na krzyzu i zmartwychwstal. Przyszedl szukac i zbawic to, co zaginelo.</p>
-<p class="hl" style="text-align:center;margin:1.5rem 0">"Jesli chcesz poznac te osobe, wzywaj Jej imienia. On Cie slucha."</p>
-<p>Pytania? Ja tez jestem katastrofa.</p>
-<div class="box">
-<p>Ponizej jest przycisk, aby sie ze mna skontaktowac.</p>
-<a href="mailto:malachruffini@gmail.com" class="btn">Kontakt</a>
-</div>
-<p style="text-align:center;font-style:italic;color:#777;margin-top:2rem">
-Ta strona zostala stworzona przez kogos, kto umarl na oddziale intensywnej terapii i wrocil zly.<br>
-Znak na samochodzie jest prawdziwy. Osoba jest prawdziwa. Ty jestes prawdziwy.<br>
-<span style="color:#c9a96e">Porozmawiajmy.</span>
-</p>
-</div>
+        const langNames = {
+            it: "IT", en: "EN", es: "ES", fr: "FR", de: "DE", pt: "PT",
+            ru: "RU", zh: "中文", ja: "日本語", ko: "한국", ar: "عربي",
+            nl: "NL", pl: "PL", tr: "TR", el: "ΕΛ"
+        };
 
-<div class="sec" id="ru">
-<h2>&#1050;&#1090;&#1086; &#1101;&#1090;&#1086;&#1090; &#1095;&#1077;&#1083;&#1086;&#1074;&#1077;&#1082;?</h2>
-<p>&#1069;&#1090;&#1086; <span class="hl">&#1048;&#1080;&#1089;&#1091;&#1089;</span>. &#1053;&#1077; &#1088;&#1077;&#1083;&#1080;&#1075;&#1080;&#1103;, &#1085;&#1077; &#1091;&#1095;&#1088;&#1077;&#1078;&#1076;&#1077;&#1085;&#1080;&#1077;, &#1085;&#1077; &#1087;&#1088;&#1072;&#1074;&#1080;&#1083;&#1086;. &#1063;&#1077;&#1083;&#1086;&#1074;&#1077;&#1082;.</p>
-<p>&#1054;&#1085; &#1093;&#1086;&#1076;&#1080;&#1083; &#1087;&#1086; &#1079;&#1077;&#1084;&#1083;&#1077;, &#1080;&#1089;&#1094;&#1077;&#1083;&#1103;&#1083; &#1073;&#1086;&#1083;&#1100;&#1085;&#1099;&#1093;, &#1087;&#1088;&#1086;&#1097;&#1072;&#1083; &#1075;&#1088;&#1077;&#1096;&#1085;&#1080;&#1082;&#1086;&#1074;, &#1091;&#1084;&#1077;&#1088; &#1085;&#1072; &#1082;&#1088;&#1077;&#1089;&#1090;&#1077; &#1080; &#1074;&#1086;&#1089;&#1082;&#1088;&#1077;&#1089;. &#1054;&#1085; &#1087;&#1088;&#1080;&#1096;&#1077;&#1083; &#1080;&#1089;&#1082;&#1072;&#1090;&#1100; &#1080; &#1089;&#1087;&#1072;&#1089;&#1072;&#1090;&#1100; &#1087;&#1086;&#1075;&#1080;&#1073;&#1096;&#1077;&#1077;.</p>
-<p class="hl" style="text-align:center;margin:1.5rem 0">"&#1045;&#1089;&#1083;&#1080; &#1093;&#1086;&#1095;&#1077;&#1096;&#1100; &#1087;&#1086;&#1079;&#1085;&#1072;&#1090;&#1100; &#1101;&#1090;&#1086;&#1075;&#1086; &#1095;&#1077;&#1083;&#1086;&#1074;&#1077;&#1082;&#1072;, &#1087;&#1088;&#1080;&#1079;&#1086;&#1074;&#1080; &#1045;&#1075;&#1086; &#1080;&#1084;&#1103;. &#1054;&#1085; &#1089;&#1083;&#1091;&#1096;&#1072;&#1077;&#1090; &#1090;&#1077;&#1073;&#1103;."</p>
-<p>&#1042;&#1086;&#1087;&#1088;&#1086;&#1089;&#1099;? &#1071; &#1090;&#1086;&#1078;&#1077; &#1082;&#1072;&#1090;&#1072;&#1089;&#1090;&#1088;&#1086;&#1092;&#1072;.</p>
-<div class="box">
-<p>&#1053;&#1080;&#1078;&#1077; &#1082;&#1085;&#1086;&#1087;&#1082;&#1072;, &#1095;&#1090;&#1086;&#1073;&#1099; &#1089;&#1074;&#1103;&#1079;&#1072;&#1090;&#1100;&#1089;&#1103; &#1089;&#1086; &#1084;&#1085;&#1086;&#1081;.</p>
-<a href="mailto:malachruffini@gmail.com" class="btn">&#1053;&#1072;&#1087;&#1080;&#1089;&#1072;&#1090;&#1100;</a>
-</div>
-<p style="text-align:center;font-style:italic;color:#777;margin-top:2rem">
-&#1069;&#1090;&#1072; &#1089;&#1090;&#1088;&#1072;&#1085;&#1080;&#1094;&#1072; &#1089;&#1086;&#1079;&#1076;&#1072;&#1085;&#1072; &#1090;&#1077;&#1084;, &#1082;&#1090;&#1086; &#1091;&#1084;&#1077;&#1088; &#1074; &#1088;&#1077;&#1072;&#1085;&#1080;&#1084;&#1072;&#1094;&#1080;&#1080; &#1080; &#1074;&#1077;&#1088;&#1085;&#1091;&#1083;&#1089;&#1103; &#1079;&#1083;&#1099;&#1084;.<br>
-&#1047;&#1085;&#1072;&#1082; &#1085;&#1072; &#1084;&#1072;&#1096;&#1080;&#1085;&#1077; &#1085;&#1072;&#1089;&#1090;&#1086;&#1103;&#1097;&#1080;&#1081;. &#1063;&#1077;&#1083;&#1086;&#1074;&#1077;&#1082; &#1085;&#1072;&#1089;&#1090;&#1086;&#1103;&#1097;&#1080;&#1081;. &#1058;&#1099; &#1085;&#1072;&#1089;&#1090;&#1086;&#1103;&#1097;&#1080;&#1081;.<br>
-<span style="color:#c9a96e">&#1044;&#1072;&#1074;&#1072;&#1081; &#1087;&#1086;&#1075;&#1086;&#1074;&#1086;&#1088;&#1080;&#1084;.</span>
-</p>
-</div>
+        let currentLang = 'it';
 
-<div class="sec rtl" id="he">
-<h2>&#1502;&#1497; &#1492;&#1493;&#1488; &#1492;&#1488;&#1491;&#1501; &#1492;&#1494;&#1492;?</h2>
-<p>&#1494;&#1492;&#1493; <span class="hl">&#1497;&#1513;&#1493;&#1506;</span>. &#1500;&#1488; &#1491;&#1514;, &#1500;&#1488; &#1502;&#1493;&#1505;&#1491;, &#1500;&#1488; &#1499;&#1500;&#1500;. &#1488;&#1491;&#1501;.</p>
-<p>&#1492;&#1493;&#1488; &#1510;&#1506;&#1491; &#1506;&#1500; &#1492;&#1488;&#1491;&#1502;&#1492;, &#1512;&#1497;&#1508;&#1488; &#1488;&#1514; &#1492;&#1495;&#1493;&#1500;&#1497;&#1501;, &#1505;&#1500;&#1495; &#1500;&#1495;&#1493;&#1496;&#1488;&#1497;&#1501;, &#1502;&#1514; &#1506;&#1500; &#1492;&#1510;&#1500;&#1489; &#1493;&#1511;&#1501; &#1500;&#1514;&#1495;&#1497;&#1497;&#1492;. &#1492;&#1493;&#1488; &#1489;&#1488; &#1500;&#1495;&#1508;&#1513; &#1493;&#1500;&#1492;&#1510;&#1497;&#1500; &#1488;&#1514; &#1492;&#1488;&#1489;&#1493;&#1491;.</p>
-<p class="hl" style="text-align:center;margin:1.5rem 0">"&#1488;&#1501; &#1488;&#1514;&#1492; &#1512;&#1493;&#1510;&#1492; &#1500;&#1492;&#1499;&#1497;&#1512; &#1488;&#1514; &#1492;&#1488;&#1491;&#1501; &#1492;&#1494;&#1492;, &#1511;&#1512;&#1488; &#1489;&#1513;&#1502;&#1493;. &#1492;&#1493;&#1488; &#1502;&#1511;&#1513;&#1497;&#1489; &#1500;&#1498;."</p>
-<p>&#1513;&#1488;&#1500;&#1493;&#1514;? &#1490;&#1501; &#1488;&#1504;&#1497; &#1488;&#1505;&#1493;&#1503;.</p>
-<div class="box">
-<p>&#1497;&#1513; &#1499;&#1508;&#1514;&#1493;&#1512; &#1500;&#1502;&#1496;&#1492; &#1500;&#1497;&#1510;&#1493;&#1512; &#1488;&#1497;&#1514;&#1497; &#1511;&#1513;&#1512;.</p>
-<a href="mailto:malachruffini@gmail.com" class="btn">&#1510;&#1493;&#1512; &#1511;&#1513;&#1512;</a>
-</div>
-<p style="text-align:center;font-style:italic;color:#777;margin-top:2rem">
-&#1491;&#1507; &#1494;&#1492; &#1504;&#1493;&#1510;&#1512; &#1506;&#1500; &#1497;&#1491;&#1497; &#1502;&#1497;&#1513;&#1492;&#1493; &#1513;&#1502;&#1514; &#1489;&#1496;&#1497;&#1508;&#1493;&#1500; &#1504;&#1502;&#1512;&#1509; &#1493;&#1495;&#1494;&#1512; &#1499;&#1493;&#1506;&#1505;.<br>
-&#1492;&#1505;&#1497;&#1502;&#1503; &#1506;&#1500; &#1492;&#1512;&#1499;&#1489; &#1488;&#1502;&#1497;&#1514;&#1497;. &#1492;&#1488;&#1491;&#1501; &#1488;&#1502;&#1497;&#1514;&#1497;. &#1488;&#1514;&#1492; &#1488;&#1502;&#1497;&#1514;&#1497;.<br>
-<span style="color:#c9a96e">&#1489;&#1493;&#1488; &#1504;&#1491;&#1489;&#1512;.</span>
-</p>
-</div>
+        function render(lang) {
+            const d = data[lang];
+            document.getElementById('page-title').textContent = d.title;
+            document.getElementById('verse').textContent = d.verse;
+            document.getElementById('msg-1').textContent = d.m1;
+            document.getElementById('msg-2').textContent = d.m2;
+            document.getElementById('msg-3').textContent = d.m3;
+            document.getElementById('msg-4').textContent = d.m4;
+            document.getElementById('msg-5').textContent = d.m5;
+            document.getElementById('msg-6').textContent = d.m6;
+            document.getElementById('msg-7').textContent = d.m7;
+            document.getElementById('contact-btn').textContent = d.contact;
+            document.getElementById('footer-1').textContent = d.f1;
+            document.getElementById('footer-2').textContent = d.f2;
+            document.getElementById('footer-3').textContent = d.f3;
+            document.getElementById('footer-4').textContent = d.f4;
+            document.getElementById('footer-5').textContent = d.f5;
+            document.getElementById('counter-label').textContent = d.cl;
 
-<div class="sec rtl" id="ar">
-<h2>&#1605;&#1606; &#1607;&#1608; &#1607;&#1584;&#1575; &#1575;&#1604;&#1588;&#1582;&#1589;&#1567;</h2>
-<p>&#1607;&#1584;&#1575; &#1607;&#1608; <span class="hl">&#1610;&#1587;&#1608;&#1593;</span>. &#1604;&#1610;&#1587; &#1583;&#1610;&#1606;&#1575;&#1611;&#1548; &#1604;&#1575; &#1605;&#1572;&#1587;&#1587;&#1577;&#1548; &#1604;&#1575; &#1602;&#1575;&#1593;&#1583;&#1577;. &#1588;&#1582;&#1589;.</p>
-<p>&#1605;&#1588;&#1609; &#1593;&#1604;&#1609; &#1575;&#1604;&#1571;&#1585;&#1590;&#1548; &#1588;&#1601;&#1609; &#1575;&#1604;&#1605;&#1585;&#1590;&#1609;&#1548; &#1594;&#1601;&#1585; &#1604;&#1604;&#1582;&#1591;&#1575;&#1577;&#1548; &#1605;&#1575;&#1578; &#1593;&#1604;&#1609; &#1575;&#1604;&#1589;&#1604;&#1610;&#1576; &#1608;&#1602;&#1575;&#1605;. &#1580;&#1575;&#1569; &#1604;&#1610;&#1591;&#1604;&#1576; &#1608;&#1610;&#1582;&#1604;&#1589; &#1605;&#1575; &#1590;&#1575;&#1593;.</p>
-<p class="hl" style="text-align:center;margin:1.5rem 0">"&#1573;&#1584;&#1575; &#1571;&#1585;&#1583;&#1578; &#1571;&#1606; &#1578;&#1593;&#1585;&#1601; &#1607;&#1584;&#1575; &#1575;&#1604;&#1588;&#1582;&#1589;&#1548; &#1575;&#1583;&#1593;&#1615; &#1576;&#1575;&#1587;&#1605;&#1607;. &#1610;&#1587;&#1605;&#1593;&#1603;."</p>
-<p>&#1571;&#1587;&#1574;&#1604;&#1577;&#1567; &#1571;&#1606;&#1575; &#1571;&#1610;&#1590;&#1575;&#1611; &#1603;&#1575;&#1585;&#1579;&#1577;.</p>
-<div class="box">
-<p>&#1610;&#1608;&#1580;&#1583; &#1586;&#1585; &#1571;&#1583;&#1606;&#1575;&#1607; &#1604;&#1604;&#1578;&#1608;&#1575;&#1589;&#1604; &#1605;&#1593;&#1610;.</p>
-<a href="mailto:malachruffini@gmail.com" class="btn">&#1578;&#1608;&#1575;&#1589;&#1604; &#1605;&#1593;&#1610;</a>
-</div>
-<p style="text-align:center;font-style:italic;color:#777;margin-top:2rem">
-&#1607;&#1584;&#1607; &#1575;&#1604;&#1589;&#1601;&#1581;&#1577; &#1571;&#1606;&#1588;&#1571;&#1607;&#1575; &#1588;&#1582;&#1589; &#1605;&#1575;&#1578; &#1601;&#1610; &#1575;&#1604;&#1593;&#1606;&#1575;&#1610;&#1577; &#1575;&#1604;&#1605;&#1585;&#1603;&#1586;&#1577; &#1608;&#1593;&#1575;&#1583; &#1594;&#1575;&#1590;&#1576;&#1575;&#1611;.<br>
-&#1575;&#1604;&#1593;&#1604;&#1575;&#1605;&#1577; &#1593;&#1604;&#1609; &#1575;&#1604;&#1587;&#1610;&#1575;&#1585;&#1577; &#1581;&#1602;&#1610;&#1602;&#1610;&#1577;. &#1575;&#1604;&#1588;&#1582;&#1589; &#1581;&#1602;&#1610;&#1602;&#1610;. &#1571;&#1606;&#1578; &#1581;&#1602;&#1610;&#1602;&#1610;.<br>
-<span style="color:#c9a96e">&#1604;&#1606;&#1578;&#1581;&#1583;&#1579;.</span>
-</p>
-</div>
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById('btn-' + lang).classList.add('active');
+            currentLang = lang;
+        }
 
-<div class="sec" id="zh">
-<h2>&#36825;&#20010;&#20154;&#26159;&#35841;&#65311;</h2>
-<p>&#36825;&#26159;<span class="hl">&#32822;&#31267;</span>&#12290;&#19981;&#26159;&#23447;&#25945;&#65292;&#19981;&#26159;&#26426;&#26500;&#65292;&#19981;&#26159;&#35268;&#21017;&#12290;&#19968;&#20010;&#20154;&#12290;</p>
-<p>&#20182;&#22312;&#22320;&#19978;&#34892;&#36208;&#65292;&#21307;&#27835;&#30149;&#20154;&#65292;&#36198;&#20813;&#32618;&#20154;&#65292;&#27515;&#22312;&#21313;&#23383;&#26550;&#19978;&#65292;&#21448;&#22797;&#27963;&#20102;&#12290;&#20182;&#26469;&#23547;&#25214;&#21644;&#25327;&#25937;&#22833;&#20007;&#30340;&#20154;&#12290;</p>
-<p class="hl" style="text-align:center;margin:1.5rem 0">"&#22914;&#26524;&#20320;&#24819;&#35748;&#35782;&#36825;&#20010;&#20154;&#65292;&#21628;&#27714;&#20182;&#30340;&#21517;&#12290;&#20182;&#21548;&#20320;&#12290;"</p>
-<p>&#26377;&#38382;&#39064;&#65311;&#25105;&#20063;&#26159;&#19968;&#22242;&#31967;&#12290;</p>
-<div class="box">
-<p>&#19979;&#38754;&#26377;&#25353;&#38062;&#21487;&#20197;&#32852;&#31995;&#25105;&#12290;</p>
-<a href="mailto:malachruffini@gmail.com" class="btn">&#32852;&#31995;&#25105;</a>
-</div>
-<p style="text-align:center;font-style:italic;color:#777;margin-top:2rem">
-&#36825;&#20010;&#39029;&#38754;&#26159;&#30001;&#19968;&#20010;&#27515;&#22312;&#37325;&#30151;&#30417;&#25252;&#23460;&#21448;&#24868;&#24594;&#22320;&#22238;&#26469;&#30340;&#20154;&#21019;&#24314;&#30340;&#12290;<br>
-&#36710;&#19978;&#30340;&#26631;&#24535;&#26159;&#30495;&#23454;&#30340;&#12290;&#36825;&#20010;&#20154;&#26159;&#30495;&#23454;&#30340;&#12290;&#20320;&#26159;&#30495;&#23454;&#30340;&#12290;<br>
-<span style="color:#c9a96e">&#25105;&#20204;&#35848;&#35848;&#21543;&#12290;</span>
-</p>
-</div>
+        function buildLangBar() {
+            const bar = document.getElementById('lang-bar');
+            Object.keys(langNames).forEach(code => {
+                const btn = document.createElement('button');
+                btn.className = 'lang-btn' + (code === 'it' ? ' active' : '');
+                btn.id = 'btn-' + code;
+                btn.textContent = langNames[code];
+                btn.onclick = () => render(code);
+                bar.appendChild(btn);
+            });
+        }
 
-</div>
+        buildLangBar();
+        render('it');
 
-<div class="foot">
-<p id="f-line">John 14:6 &mdash; Created with anger, hope, and truth.</p>
-<p>Scansioni: <span id="count">...</span></p>
-</div>
+        // Counter API
+        fetch('https://api.counterapi.dev/v2/malachruffini-dots-team-4152/first-counter-4152')
+            .then(r => r.json())
+            .then(data => {
+                document.getElementById('visitor-count').textContent = data.count || data.value || '0';
+            })
+            .catch(() => {
+                document.getElementById('visitor-count').textContent = '—';
+            });
 
-<audio id="au" loop>
-<source src="music/nickpanekaiassets-gritty-industrial-blues-neo-western-instrumental-323534.mp3" type="audio/mpeg">
-</audio>
+        // Music control
+        const audio = document.getElementById('bg-music');
+        const btn = document.getElementById('music-btn');
+        let playing = false;
 
-<button class="music" id="mb" onclick="tm()">&#9836;</button>
+        function toggleMusic() {
+            if (playing) {
+                audio.pause();
+                btn.textContent = '▶ Musica';
+                playing = false;
+            } else {
+                audio.play().then(() => {
+                    btn.textContent = '⏸ Ferma';
+                    playing = true;
+                }).catch(() => {
+                    btn.textContent = '▶ Musica';
+                });
+            }
+        }
 
-<script data-goatcounter="https://sutra.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-
-<script>
-// Hero translations
-var H={
-it:{r:'Giovanni 14:6',v:'"Io sono la via, la verita e la vita.<br>Nessuno viene al Padre se non per mezzo di me."',s:'Se stai leggendo, non e per caso.<br>Le coincidenze non esistono.',f:'John 14:6 &mdash; Created with anger, hope, and truth.'},
-en:{r:'John 14:6',v:'"I am the way, the truth, and the life:<br>no man cometh unto the Father, but by me."',s:'If you are reading this, it is not by chance.<br>Coincidences do not exist.',f:'John 14:6 &mdash; Created with anger, hope, and truth.'},
-es:{r:'Juan 14:6',v:'"Yo soy el camino, y la verdad, y la vida;<br>nadie viene al Padre, sino por mi."',s:'Si estas leyendo esto, no es por casualidad.<br>Las coincidencias no existen.',f:'Juan 14:6 &mdash; Creado con ira, esperanza y verdad.'},
-fr:{r:'Jean 14:6',v:'"Je suis le chemin, la verite, et la vie.<br>Nul ne vient au Pere que par moi."',s:'Si tu lis ceci, ce n\'est pas par hasard.<br>Les coincidences n\'existent pas.',f:'Jean 14:6 &mdash; Cree avec colere, espoir et verite.'},
-de:{r:'Johannes 14:6',v:'"Ich bin der Weg und die Wahrheit und das Leben;<br>niemand kommt zum Vater denn durch mich."',s:'Wenn du das liest, ist es nicht zufallig.<br>Zufalle gibt es nicht.',f:'Johannes 14:6 &mdash; Mit Wut, Hoffnung und Wahrheit geschaffen.'},
-nl:{r:'Johannes 14:6',v:'"Ik ben de Weg, en de Waarheid, en het Leven.<br>Niemand komt tot den Vader, dan door Mij."',s:'Als je dit leest, is het niet toevallig.<br>Toeval bestaat niet.',f:'Johannes 14:6 &mdash; Gemaakt met woede, hoop en waarheid.'},
-pt:{r:'Joao 14:6',v:'"Eu sou o caminho, e a verdade, e a vida;<br>ninguem vem ao Pai, senao por mim."',s:'Se estas a ler isto, nao e por acaso.<br>As coincidencias nao existem.',f:'Joao 14:6 &mdash; Criado com raiva, esperanca e verdade.'},
-ro:{r:'Ioan 14:6',v:'"Eu sunt Calea, Adevarul si Viata.<br>Nimeni nu vine la Tatal decat prin Mine."',s:'Daca citesti aceasta, nu este intamplator.<br>Coincidentele nu exista.',f:'Ioan 14:6 &mdash; Creat cu manie, speranta si adevar.'},
-el:{r:'\u039a\u0391\u03a4\u0391 \u0399\u03a9\u0391\u039d\u039d\u0397\u039d \u0399\u0394:\u03a3\u02b3',v:'"\u0395\u03b3\u03ce \u03b5\u03af\u03bc\u03b7 \u03b7 \u03bf\u03b4\u03cc\u03c2 \u03ba\u03b1\u03b9 \u03b7 \u03b1\u03bb\u03ae\u03b8\u03b5\u03b9\u03b1 \u03ba\u03b1\u03b9 \u03b7 \u03b6\u03c9\u03ae\u00b7<br>\u03bf\u03c5\u03b4\u03b5\u03af\u03c2 \u03ad\u03c1\u03c7\u03b5\u03c4\u03b1\u03b9 \u03c0\u03c1\u03cc\u03c2 \u03c4\u03bf\u03bd \u03c0\u03b1\u03c4\u03ad\u03c1\u03b1 \u03b5\u03af \u03bc\u03b7 \u03b4\u03b9\' \u03b5\u03bc\u03bf\u03cd."',s:'\u0386\u03bd \u03c4\u03cc \u03b4\u03b9\u03b1\u03b2\u03ac\u03b6\u03b5\u03b9\u03c2 \u03b1\u03c5\u03c4\u03cc, \u03b4\u03b5\u03bd \u03b5\u03af\u03bd\u03b1\u03b9 \u03c4\u03c5\u03c7\u03b1\u03af\u03bf.<br>\u039f\u03b9 \u03c3\u03c5\u03bc\u03c0\u03c4\u03ce\u03c3\u03b5\u03b9\u03c2 \u03b4\u03b5\u03bd \u03c5\u03c0\u03ac\u03c1\u03c7\u03bf\u03c5\u03bd',f:'\u0399\u03c9\u03ac\u03bd\u03bd\u03b7\u03c2 \u03b9\u03b4:\u03a3\u02b3 &mdash; \u0394\u03b7\u03bc\u03b9\u03bf\u03c5\u03c1\u03b3\u03ae\u03b8\u03b7\u03ba\u03b5 \u03bc\u03b5 \u03b8\u03c5\u03bc\u03cc, \u03b5\u03bb\u03c0\u03af\u03b4\u03b1 \u03ba\u03b1\u03b9 \u03b1\u03bb\u03ae\u03b8\u03b5\u03b9\u03b1.'},
-pl:{r:'Jan 14:6',v:'"Jam jest droga i prawda, i zywot;<br>nikt nie przychodzi do Ojca, tylko przeze mnie."',s:'Jesli to czytasz, to nie jest przypadkiem.<br>Zbiegi okolicznosci nie istnieja.',f:'Jan 14:6 &mdash; Stworzone ze zloscia, nadzieja i prawda.'},
-ru:{r:'\u041e\u0422 \u0418\u041e\u0410\u041d\u041d\u0410 14:6',v:'"\u042f \u0435\u0441\u043c\u044c \u043f\u0443\u0442\u044c \u0438 \u0438\u0441\u0442\u0438\u043d\u0430 \u0438 \u0436\u0438\u0437\u043d\u044c;<br>\u043d\u0438\u043a\u0442\u043e \u043d\u0435 \u043f\u0440\u0438\u0445\u043e\u0434\u0438\u0442 \u043a \u041e\u0442\u0446\u0443, \u043a\u0430\u043a \u0442\u043e\u043b\u044c\u043a\u043e \u0447\u0435\u0440\u0435\u0437 \u041c\u0435\u043d\u044f."',s:'\u0415\u0441\u043b\u0438 \u0442\u044b \u0447\u0438\u0442\u0430\u0435\u0448\u044c \u044d\u0442\u043e, \u044d\u0442\u043e \u043d\u0435 \u0441\u043b\u0443\u0447\u0430\u0439\u043d\u043e.<br>\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442.',f:'\u0418\u043e\u0430\u043d\u043d\u0430 14:6 &mdash; \u0421\u043e\u0437\u0434\u0430\u043d\u043e \u0441\u043e \u0437\u043b\u043e\u0441\u0442\u044c\u044e, \u043d\u0430\u0434\u0435\u0436\u0434\u043e\u0439 \u0438 \u043f\u0440\u0430\u0432\u0434\u043e\u0439.'},
-he:{r:'\u05d9\u05d5\u05d7\u05e0\u05df \u05d9\u05d3:\u05d5',v:'"\u05d0\u05b8\u05de\u05b7\u05e8 \u05dc\u05d5\u05b9 \u05d9\u05b5\u05e9\u05c1\u05d5\u05bc\u05e2\u05b7: \u05d0\u05b2\u05e0\u05b4\u05d9 \u05d4\u05b7\u05d3\u05bc\u05b6\u05e8\u05b6\u05da\u05b0 \u05d5\u05b0\u05d4\u05b8\u05d0\u05b1\u05de\u05b6\u05ea \u05d5\u05b0\u05d4\u05b7\u05d7\u05b7\u05d9\u05bc\u05b4\u05d9\u05dd;<br>\u05d0\u05b5\u05d9\u05df\u05be\u05d0\u05b4\u05d9\u05e9\u05c1 \u05d1\u05bc\u05b8\u05d0 \u05d0\u05b6\u05dc\u05be\u05d4\u05b8\u05d0\u05b8\u05d1 \u05db\u05bc\u05b4\u05d9 \u05d0\u05b4\u05dd\u05be\u05d1\u05bc\u05b4\u05d9."',s:'\u05d0\u05dd \u05d0\u05ea\u05d4 \u05e7\u05d5\u05e8\u05d0 \u05d0\u05ea \u05d6\u05d4, \u05d6\u05d4 \u05dc\u05d0 \u05d1\u05de\u05e7\u05e8\u05d4.<br>\u05e6\u05d9\u05e8\u05d5\u05e4\u05d9 \u05de\u05e7\u05e8\u05d9\u05dd \u05dc\u05d0 \u05e7\u05d9\u05d9\u05de\u05d9\u05dd.',f:'\u05d9\u05d5\u05d7\u05e0\u05df \u05d9\u05d3:\u05d5 &mdash; \u05e0\u05d5\u05e6\u05e8 \u05d1\u05d6\u05e2\u05dd, \u05ea\u05e7\u05d5\u05d5\u05d4 \u05d5\u05d0\u05de\u05ea.'},
-ar:{r:'\u064a\u0648\u062d\u0646\u0627 \u0661\u0664:\u0666',v:'"\u0642\u064e\u0627\u0644\u064e \u0644\u064e\u0647\u064f \u064a\u064e\u0633\u064f\u0648\u0639\u064f: \u0623\u064e\u0646\u064e\u0627 \u0647\u064f\u0648\u064e \u0627\u0644\u0637\u0651\u064e\u0631\u064a\u0642\u064f \u0648\u064e\u0627\u0644\u0652\u062d\u064e\u0642\u0651\u064f \u0648\u064e\u0627\u0644\u0652\u062d\u064e\u064a\u064e\u0627\u0629\u064f.<br>\u0644\u064e\u064a\u0652\u0633\u064e \u0623\u064e\u062d\u064e\u062f\u064c \u064a\u064e\u0623\u0652\u062a\u0650\u064a \u0625\u0650\u0644\u064e\u0649 \u0627\u0644\u0622\u0628\u0650 \u0625\u0650\u0644\u0651\u064e\u0627 \u0628\u0650\u064a."',s:'\u0625\u0630\u0627 \u0643\u0646\u062a \u062a\u0642\u0631\u0623 \u0647\u0630\u0627, \u0641\u0644\u064a\u0633 \u0628\u0627\u0644\u0635\u062f\u0641\u0629, \u0627\u0644\u0635\u062f\u0641 \u0644\u0627 \u062a\u0648\u062c\u062f.',f:'\u064a\u0648\u062d\u0646\u0627 \u0661\u0664:\u0666 &mdash; \u0645\u0635\u0646\u0648\u0639 \u0628\u0627\u0644\u063a\u0636\u0628, \u0627\u0644\u0623\u0645\u0644 \u0648\u0627\u0644\u062d\u0642\u064a\u0642\u0629.'},
-zh:{r:'\u7ea6\u7ff0\u798f\u97f3 14:6',v:'"\u6211\u5c31\u662f\u9053\u8def\u3001\u771f\u7406\u3001\u751f\u547d\uff1b<br>\u82e5\u4e0d\u85c9\u7740\u6211\uff0c\u6ca1\u6709\u4eba\u80fd\u5230\u7236\u90a3\u91cc\u53bb\u3002"',s:'\u5982\u679c\u4f60\u6b63\u5728\u8bfb\u8fd9\u4e2a\uff0c\u8fd9\u4e0d\u662f\u5076\u7136\uff0c\u5951\u5408\u4e0d\u5b58\u5728\u3002',f:'\u7ea6\u7ff0\u798f\u97f3 14:6 &mdash; \u7528\u6124\u6012\u3001\u5e0c\u671b\u548c\u771f\u7406\u521b\u9020\u3002'}}
-};
-
-function go(l){
-var s=document.querySelectorAll('.sec');
-for(var i=0;i<s.length;i++)s[i].classList.remove('on');
-var b=document.querySelectorAll('.nav button');
-for(var i=0;i<b.length;i++)b[i].classList.remove('on');
-document.getElementById(l).classList.add('on');
-event.target.classList.add('on');
-var d=H[l];
-document.getElementById('h-ref').innerHTML=d.r;
-document.getElementById('h-verse').innerHTML=d.v;
-document.getElementById('h-sub').innerHTML=d.s;
-document.getElementById('f-line').innerHTML=d.f;
-window.scrollTo({top:0,behavior:'smooth'});
-}
-
-// Counter
-fetch('https://api.countapi.xyz/hit/il-segno-sull-auto/visits')
-.then(function(r){return r.json()})
-.then(function(d){document.getElementById('count').innerText=d.value.toLocaleString()})
-.catch(function(){document.getElementById('count').innerText='many'});
-
-// Audio
-var au=document.getElementById('au');
-var mb=document.getElementById('mb');
-var playing=false;
-
-// Autoplay muted (browser allows this)
-au.volume=0.3;
-au.muted=true;
-var pp=au.play();
-if(pp&&pp.then){
-pp.then(function(){
-mb.classList.add('play');
-mb.innerHTML='&#9836;';
-mb.title='Audio attivo (muto — clicca per suono)';
-playing=true;
-}).catch(function(){
-mb.innerHTML='&#9836;';
-mb.title='Clicca per musica';
-});
-}
-
-// Unmute on first click
-document.addEventListener('click',function un(){
-if(playing&&au.muted){au.muted=false;mb.title='Musica attiva';document.removeEventListener('click',un);}
-});
-
-function tm(){
-if(playing){au.pause();mb.classList.remove('play');mb.innerHTML='&#9836;';mb.title='Clicca per musica';playing=false;}
-else{au.muted=false;au.volume=0.3;var p=au.play();if(p&&p.then){p.then(function(){mb.classList.add('play');mb.innerHTML='&#9835;';mb.title='Musica attiva';playing=true;}).catch(function(){mb.innerHTML='&#9836;';alert('Clicca di nuovo');});}}
-}
-</script>
-
+        document.addEventListener('click', function initAudio() {
+            if (!playing) {
+                audio.play().then(() => {
+                    btn.textContent = '⏸ Ferma';
+                    playing = true;
+                }).catch(() => {});
+            }
+            document.removeEventListener('click', initAudio);
+        }, { once: true });
+    </script>
 </body>
 </html>
