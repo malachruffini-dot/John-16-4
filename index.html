@@ -185,7 +185,7 @@
 
     <audio id="bg-music" loop>
         <source src="nickpanekaiassets-gritty-industrial-blues-neo-western-instrumental-323534.mp3" type="audio/mpeg">
-        <source src="https://raw.githubusercontent.com/USERNAME/REPO-NAME/music/nickpanekaiassets-gritty-industrial-blues-neo-western-instrumental-323534.mp3" type="audio/mpeg">
+        <source src="https://cdn.jsdelivr.net/gh/malachruffini-dot/John-16-4@music/nickpanekaiassets-gritty-industrial-blues-neo-western-instrumental-323534.mp3" type="audio/mpeg">
     </audio>
 
     <button class="music-control" id="music-btn" onclick="toggleMusic()">▶ Musica</button>
@@ -529,11 +529,12 @@
         buildLangBar();
         render('it');
 
-        // Counter API
-        fetch('https://api.counterapi.dev/v2/malachruffini-dots-team-4152/first-counter-4152')
+        // Counter — countapi.xyz (free, no token, works on static sites like GitHub Pages)
+        // This endpoint increments by 1 on every visit and returns the new count
+        fetch('https://api.countapi.xyz/hit/malachruffini/giovanni146')
             .then(r => r.json())
             .then(data => {
-                document.getElementById('visitor-count').textContent = data.count || data.value || '0';
+                document.getElementById('visitor-count').textContent = data.value || '0';
             })
             .catch(() => {
                 document.getElementById('visitor-count').textContent = '—';
